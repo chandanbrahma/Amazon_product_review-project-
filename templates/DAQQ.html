@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+body{
+    padding:0px;
+    margin:0px;
+    background-image: url('https://img2.goodfon.com/wallpaper/nbig/1/51/tekstura-uzor-svetlyy-fon.jpg')
+}
+.top{
+    text-align: center;
+    font-size: 50px;
+    
+    font-family:'Abril Fatface', cursive; 
+}
+.down{
+    text-align: center;
+    font-size: xx-large;
+}
+#one{
+    height: 30px;
+    width: 70px;
+}
+.foo{
+    text-align: center;
+}
+
+    </style>
+</head>
+<body>
+<h1 class="top">SENTIMENT PREDICTION</h1>
+<div class="down">
+<form action="{{ url_for('home') }}" method="POST">
+        <label for="prod"><b>Product link:</b> </label>
+        <input type="text" id="prod" name="prod">
+        <label for="date"><b>Date:</b></label>
+        <input type="date" id="ddate" name="ddate"><br><br>
+       <button id="one" type="submit" name="submit"><b>Predict</b></button>
+      </form>
+
+</div>
+</form>
+        </div>
+       
+
+        <!-- Footer -->
+       <div class='footer'>          
+            <div class="contact">
+            <center>
+               <a target="_blank" href="https://github.com/chandanbrahma/Amazon_product_review-project-"><i class="fab fa-github fa-lg contact-icon"></i></a>
+           </div>
+           <center>
+           <p class='footer-description'>Made with ❤️ by Pooja,Chandan,Dibu,Aishwarya,Gayatri.</p>
+       </div>           
+   <br>
+   <br>
+</body>
+</html>
+
+{{prediction}}<br>
+{{plots}}<br>
+{% if result != None %}
+<img src="data:image/png;base64,{{ result }}"\width="400" height="300">
+{% endif %}
